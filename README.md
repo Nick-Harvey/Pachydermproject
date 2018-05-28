@@ -2,6 +2,11 @@
 1. Pachyderm pipeline example
 2. Pachyderm one-pager marketing example. 
 
+### Pachyderm One Pager 
+This is an one-pager marketing asset I created (aka product datasheet) that is meant to explain the value of Pachyderm. The audience I had in mind was that of an IT decision maker(manager/director) who might have heard about pachyderm from one of his employees and wants to quickly find out what it is and the value it provides. 
+ 
+**Important:** When writing material such as this, it's important to base the content on what your customers find most valuable to ensure relevance. Since I don't have any internal knowledge of Pachyderms customers, I had to write the draft using my experiences with data science teams in the field as a primary source. All of this to say, if the problem statement doesn't resonate with what you've witnessed with your customers, its because I wasn't able to leverage that information :) 
+
 
 ### Pachyderm pipeline example
 
@@ -31,7 +36,3 @@ I was originally implementing my own version of this application in tensorflow, 
 2. [https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial](https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial)
 
 
-### Pachyderm One Pager 
-This is an one-pager marketing asset I created (aka product datasheet) that is meant to explain the value of Pachyderm. The audience I had in mind was that of an IT decision maker(manager/director) who might have heard about pachyderm from one of his employees and wants to quickly find out what it is and the value it provides. 
- 
-**Important:** When writing material such as this, it's important to base the content on what your customers find most valuable to ensure relevance. Since I don't have any internal knowledge of Pachyderms customers, I had to write the draft using my experiences with data science teams in the field as a primary source. All of this to say, if the problem statement doesn't resonate with what you've witnessed with your customers, its because I wasn't able to leverage that information :) 
