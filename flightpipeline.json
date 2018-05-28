@@ -1,0 +1,53 @@
+{
+  "pipeline": {
+    "name": "flight_scraper"
+  },
+  "transform": {
+    "cmd": [ "curl",
+        "-0",
+        "https://flights-dot-flightdata-201923.appspot.com/ingest"
+    ],
+    "acceptReturnCode": [0]
+  },
+  "input": {
+    "cron": {
+      "name": "tick",
+      "spec": "0 15 * * *"
+    }
+  },
+  "incremental": true
+}
+{
+  "pipeline": {
+    "name": "allflights"
+  },
+  "transform": {
+    "image": "nickharvey/pachyflights:example",
+    "cmd": [ "/bin/bash" ],
+    "stdin": [
+  "python3 flights.py --input_dir /pfs/2018flights/01/ --output_dir /pfs/out"
+    ]
+  },
+  "input": {
+    "atom": {
+      "repo": "2018flights",
+      "glob": "/"
+    }
+  },
+  "egress": {
+    "URL": "gs://2017_2018_flights/output/"
+  },
+  "parallelism_spec": {
+    "constant" : 1
+  },
+  "resource_requests": {
+    "memory": "10G",
+    "cpu": 2
+  },
+  "input": {
+    "cron": {
+      "name": "tick",
+      "spec": "0 16 * * *"
+    }
+  }
+}

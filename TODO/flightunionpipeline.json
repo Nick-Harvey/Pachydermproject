@@ -1,0 +1,40 @@
+{
+  "pipeline": {
+    "name": "allflights"
+  },
+  "transform": {
+    "image": "nickharvey/pachyflights:latest",
+    "cmd": [ "/bin/bash" ],
+    "stdin": [
+  "python3 flights.py --input_dir /pfs/ --output_dir /pfs/out"
+    ]
+  },
+  "egress": {
+    "URL": "gs://2017_2018_flights/output/"
+  },
+  "parallelism_spec": {
+    "constant" : 1
+  },
+  "resource_requests": {
+    "memory": "10G",
+    "cpu": 2
+  },
+  "input": {
+    "cross" : [
+      {
+        "atom": {
+          "name": "2017",
+          "repo": "2017flights",
+          "glob": "/"
+        }
+      },
+      {
+        "atom": {
+          "name": "2018",
+          "repo": "2018flights",
+          "glob": "/"
+        }
+      }
+    ] 
+  }
+}
